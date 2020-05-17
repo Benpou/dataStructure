@@ -11,8 +11,46 @@ public class LinkedListImpl {
         myLists.printLog();
 //        myLists.addToLast(11);
 //        myLists.printLog();
-        myLists.addNodeAtCertainIndex(88, 2);
+        myLists.addList(5500);
         myLists.printLog();
+        myLists.addNodeAtCertainIndex(88, 4);
+        myLists.printLog();
+        myLists.removeLastNde();
+        myLists.printLog();
+        myLists.removeFirstNode();
+        myLists.printLog();
+        myLists.removeFromCertainIndex(2);
+        myLists.printLog();
+    }
+
+
+    // Remove the car from the index
+    public void removeFromCertainIndex(int index) {
+        Node temp = head;
+        int count = 0;
+
+        while (temp.next != null && ++count != index) {
+            temp = temp.next;
+        }
+        Node nextNode = temp.next.next;
+        temp.next = nextNode;
+    }
+
+
+    // Remove first Node
+    public void removeFirstNode() {
+        head = head.next;
+    }
+
+
+    //Remove last Node
+    public void removeLastNde() {
+        Node temp = head;
+        while( temp.next != null && temp.next.next != null ) {
+            temp = temp.next;
+        }
+        temp.next = null;
+        tail = temp;
     }
     /*
      * Adds node at the certain index.
