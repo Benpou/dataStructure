@@ -29,9 +29,6 @@ public class LinkedListImpl {
         temp.next = newNode;
     }
 
-
-
-
     // Add to the start Node
     public void addList(int data) {
         if(head == null) {
