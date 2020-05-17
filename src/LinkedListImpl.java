@@ -1,59 +1,67 @@
 public class LinkedListImpl {
 
-
-    class Node {
-        int val;
-        Node next;
-
-        public Node(int val) {
-            this.val = val;
-        }
-    }
-
     Node head = null;
     Node tail = null;
-
     public static void main(String[] args) {
-        LinkedListImpl listImpl = new LinkedListImpl();
-
-        listImpl.addNode(10);
-        listImpl.addNode(30);
-        listImpl.addNode(40);
-        listImpl.printLinkedList();
-        listImpl.addNodeAtStart(1000);
-        listImpl.printLinkedList();
+        LinkedListImpl myLists = new LinkedListImpl();
+        myLists.addList(12);
+        myLists.addList(22);
+        myLists.addList(44);
+        myLists.addList(55);
+        myLists.printLog();
+//        myLists.addToLast(11);
+//        myLists.printLog();
+        myLists.addNodeAtCertainIndex(88, 2);
+        myLists.printLog();
     }
+    /*
+     * Adds node at the certain index.
+     */
+    public void addNodeAtCertainIndex(int data , int index) {
+        int count = 0;
+        Node temp = head;
 
-    // Add at the END of the list
-    public void addNode(int val) {
-        if (head == null) {
-            Node temp = new Node(val);
-            head = temp;
-            tail = temp;
-        } else {
-            tail.next = new Node(val);
-            tail = tail.next;
+        while ( temp != null && ++count != index) {
+            temp = temp.next;
         }
+        Node newNode = new Node(data);
+        newNode.next = temp.next;
+        temp.next = newNode;
     }
 
-    // Add at the start of the list
-    public void addNodeAtStart(int val) {
+
+
+
+    // Add to the start Node
+    public void addList(int data) {
         if(head == null) {
-            Node temp = new Node(val);
+            Node temp = new Node(data);
             head = temp;
             tail = temp;
         } else {
-            Node temp = new Node(val);
+            Node temp = new Node(data);
             temp.next = head;
             head = temp;
         }
     }
 
-    public void printLinkedList() {
+    //Add to Last
+    public void addToLast(int data) {
+        if(head == null) {
+            Node temp = new Node(data);
+            head = temp;
+            tail = temp;
+        } else {
+            tail.next = new Node(data);
+            tail = tail.next;
+        }
+    }
+
+    public void printLog() {
         System.out.println();
         Node temp = head;
         while (temp != null) {
-            System.out.print(" " + temp.val);
+            System.out.print(" " + temp.data);
             temp = temp.next;
         }
     }
