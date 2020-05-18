@@ -8,21 +8,53 @@ public class LinkedListImpl {
         myLists.addList(22);
         myLists.addList(44);
         myLists.addList(55);
-        myLists.printLog();
+        myLists.addList(65);
+//        myLists.printLog();
 //        myLists.addToLast(11);
 //        myLists.printLog();
-        myLists.addList(5500);
+//        myLists.addList(5500);
+//        myLists.printLog();
+//        myLists.addNodeAtCertainIndex(88, 4);
+//        myLists.printLog();
+//        myLists.removeLastNde();
+//        myLists.printLog();
+//        myLists.removeFirstNode();
+//        myLists.printLog();
+//        myLists.removeFromCertainIndex(2);
+//        myLists.printLog();
+        System.out.print(myLists.searchValue(22));
         myLists.printLog();
-        myLists.addNodeAtCertainIndex(88, 4);
-        myLists.printLog();
-        myLists.removeLastNde();
-        myLists.printLog();
-        myLists.removeFirstNode();
-        myLists.printLog();
-        myLists.removeFromCertainIndex(2);
-        myLists.printLog();
+        System.out.print(myLists.searchAndReturnIndex(44));
+
     }
 
+    /*
+    Search and return index
+     */
+    public int searchAndReturnIndex(int value) {
+        Node temp = head;
+        int count = 0;
+        while(temp != null) {
+            if(temp.data == value) {
+                return count;
+            }
+            temp = temp.next;
+            count++;
+        }
+        return -1;
+    }
+
+    //Search to see if the given value exists in the list
+    // return true or false
+    public boolean searchValue(int value) {
+        Node temp = head;
+        while (temp != null) {
+            if(temp.data == value) {
+                return true;
+            }
+        }
+        return false;
+    }
 
     // Remove the car from the index
     public void removeFromCertainIndex(int index) {
