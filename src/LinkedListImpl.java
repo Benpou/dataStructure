@@ -46,14 +46,16 @@ public class LinkedListImpl {
 
     //Search to see if the given value exists in the list
     // return true or false
-    public boolean searchValue(int value) {
+    public String searchValue(int value) {
         Node temp = head;
         while (temp != null) {
             if(temp.data == value) {
-                return true;
+                return "true";
+            } else {
+                temp = temp.next;
             }
         }
-        return false;
+        return "false";
     }
 
     // Remove the car from the index
