@@ -1,19 +1,36 @@
 public class LinkedListImpl {
 
-    Node head = null;
-    Node tail = null;
+    static Node head;
+    Node tail;
     public static void main(String[] args) {
         LinkedListImpl myLists = new LinkedListImpl();
-        myLists.addList(12);
-        myLists.addList(22);
-        myLists.addList(44);
-        myLists.addList(55);
-        myLists.addList(65);
+//        myLists.addList(12);
+//        myLists.addList(22);
+//        myLists.addList(44);
+//        myLists.addList(55);
+//        myLists.addList(65);
 //        myLists.printLog();
 //        myLists.addToLast(11);
 //        myLists.printLog();
-//        myLists.addList(5500);
+//        myLists.addToLast(5500);
+//        myLists.addToLast(33);
+//        myLists.addToLast(121);
+//        myLists.addToLast(10);
+//        myLists.addToLast(999);
+//        myLists.addToLast(44);
 //        myLists.printLog();
+        myLists.head = new Node(11);
+        myLists.head.next = new Node(22);
+        myLists.head.next.next = new Node(33);
+        myLists.head.next.next.next = new Node(44);
+        myLists.printReverse(head);
+        System.out.println("");
+        System.out.println("Reversed linked list ");
+        head = myLists.reverseList(head);
+        myLists.printReverse(head);
+        System.out.println("");
+
+
 //        myLists.addNodeAtCertainIndex(88, 4);
 //        myLists.printLog();
 //        myLists.removeLastNde();
@@ -22,12 +39,36 @@ public class LinkedListImpl {
 //        myLists.printLog();
 //        myLists.removeFromCertainIndex(2);
 //        myLists.printLog();
-        System.out.print(myLists.searchValue(22));
-        myLists.printLog();
-        System.out.print(myLists.searchAndReturnIndex(44));
+//        System.out.print(myLists.searchValue(22));
+//        myLists.printLog();
+//        System.out.print(myLists.searchAndReturnIndex(44));
 
     }
 
+
+
+    //Reverse linkedlist
+     public Node reverseList(Node node) {
+        Node prev = null;
+         Node curr = node;
+         Node next;
+
+        while (curr != null) {
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+        node = prev;
+        return node;
+    }
+
+    public void printReverse(Node node){
+        while (node != null) {
+            System.out.print(node.data + " ");
+            node = node.next;
+        }
+    }
     /*
     Search and return index
      */
