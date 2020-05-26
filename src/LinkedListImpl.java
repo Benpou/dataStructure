@@ -12,23 +12,25 @@ public class LinkedListImpl {
 //        myLists.printLog();
 //        myLists.addToLast(11);
 //        myLists.printLog();
-//        myLists.addToLast(5500);
-//        myLists.addToLast(33);
-//        myLists.addToLast(121);
-//        myLists.addToLast(10);
-//        myLists.addToLast(999);
-//        myLists.addToLast(44);
-//        myLists.printLog();
-        myLists.head = new Node(11);
-        myLists.head.next = new Node(22);
-        myLists.head.next.next = new Node(33);
-        myLists.head.next.next.next = new Node(44);
-        myLists.printReverse(head);
-        System.out.println("");
-        System.out.println("Reversed linked list ");
-        head = myLists.reverseList(head);
-        myLists.printReverse(head);
-        System.out.println("");
+        myLists.addToLast(5500);
+        myLists.addToLast(33);
+        myLists.addToLast(121);
+        myLists.addToLast(10);
+        myLists.addToLast(33);
+        myLists.addToLast(44);
+        myLists.printLog();
+        myLists.removeGivenIndex(33);
+        myLists.printLog();
+//        myLists.head = new Node(11);
+//        myLists.head.next = new Node(22);
+//        myLists.head.next.next = new Node(33);
+//        myLists.head.next.next.next = new Node(44);
+//        myLists.printReverse(head);
+//        System.out.println("");
+//        System.out.println("Reversed linked list ");
+//        head = myLists.reverseList(head);
+//        myLists.printReverse(head);
+//        System.out.println("");
 
 
 //        myLists.addNodeAtCertainIndex(88, 4);
@@ -45,6 +47,21 @@ public class LinkedListImpl {
 
     }
 
+    // Remove from list
+    public Node removeGivenIndex(int value) {
+        while (head != null && head.data == value) {
+            head = head.next;
+        }
+        Node temp = head;
+        while(temp != null && temp.next != null) {
+            if (temp.next.data == value) {
+                temp.next = temp.next.next;
+            } else {
+                temp = temp.next;
+            }
+        }
+        return head;
+    }
 
 
     //Reverse linkedlist
