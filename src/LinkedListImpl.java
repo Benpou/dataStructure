@@ -64,7 +64,10 @@ public class LinkedListImpl {
     }
 
 
-    //Reverse linkedlist
+    /* Reverse linkedlist
+        Time Complexity O(n)
+        space Complexity O(1)
+     */
      public Node reverseList(Node node) {
         Node prev = null;
          Node curr = node;
