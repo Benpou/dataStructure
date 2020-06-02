@@ -20,6 +20,10 @@ public class PalindromeCheck {
         int low = 0;
         int high = s.length() -1;
 
+        StringBuilder s1 = new StringBuilder("hello");
+//        s1.reverse();
+        System.out.println(s1.reverse());
+
         while (low < high) {
             if(s.charAt(low) != s.charAt(high)) {
                 return false;
