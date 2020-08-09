@@ -1,4 +1,4 @@
-import org.omg.CORBA.Any;
+package LinkedListPractice;
 
 public class LinkedLists<AnyType> {
 

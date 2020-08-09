@@ -1,4 +1,4 @@
-public class A {
+public class LegacyA {
     public static void main(String[] args) {
         B b = new B("behnam");
         b.print();

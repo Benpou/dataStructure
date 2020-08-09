@@ -1,3 +1,5 @@
+package LinkedListPractice;
+
 public class LinkedListImpl {
 
     static Node head;
@@ -21,10 +23,10 @@ public class LinkedListImpl {
         myLists.printLog();
         myLists.removeGivenIndex(33);
         myLists.printLog();
-//        myLists.head = new Node(11);
-//        myLists.head.next = new Node(22);
-//        myLists.head.next.next = new Node(33);
-//        myLists.head.next.next.next = new Node(44);
+//        myLists.head = new LinkedListPractice.Node(11);
+//        myLists.head.next = new LinkedListPractice.Node(22);
+//        myLists.head.next.next = new LinkedListPractice.Node(33);
+//        myLists.head.next.next.next = new LinkedListPractice.Node(44);
 //        myLists.printReverse(head);
 //        System.out.println("");
 //        System.out.println("Reversed linked list ");
@@ -132,13 +134,13 @@ public class LinkedListImpl {
     }
 
 
-    // Remove first Node
+    // Remove first LinkedListPractice.Node
     public void removeFirstNode() {
         head = head.next;
     }
 
 
-    //Remove last Node
+    //Remove last LinkedListPractice.Node
     public void removeLastNde() {
         Node temp = head;
         while( temp.next != null && temp.next.next != null ) {
@@ -162,7 +164,7 @@ public class LinkedListImpl {
         temp.next = newNode;
     }
 
-    // Add to the start Node
+    // Add to the start LinkedListPractice.Node
     public void addList(int data) {
         if(head == null) {
             Node temp = new Node(data);
