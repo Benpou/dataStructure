@@ -13,7 +13,7 @@ class ConvertBinaryNumInALinkedList
   {
     boolean data;
     Node next;
-  };
+  }
 
   // Returns decimal value of binary linked list /
   static int decimalValue( Node head)
